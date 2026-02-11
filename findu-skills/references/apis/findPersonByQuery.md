@@ -4,7 +4,9 @@
 
 ## 密钥配置
 请在 `references/secrets/config.sh` 中配置：
-- `APP_KEY`
+- `AGENT_ID`
+- `AGENT_SIGNATURE`
+- `AUTH_TOKEN`
 
 ## 基本信息
 - baseUrl: http://api.qianmiao.life/api/v1/public/match
@@ -15,7 +17,9 @@
 ## Headers
 | 参数名 | 来源 | 描述 |
 |--------|------|------|
-| X-App-Key | `references/secrets/config.sh` 的 `APP_KEY` | 应用密钥 |
+| X-Agent-Id | `references/secrets/config.sh` 的 `AGENT_ID` | 代理ID |
+| X-Agent-Signature | `references/secrets/config.sh` 的 `AGENT_SIGNATURE` | 代理签名 |
+| Authorization | `references/secrets/config.sh` 的 `AUTH_TOKEN` | 认证令牌 |
 
 ## 请求参数
 | 参数名 | 类型 | 必填 | 描述 |
@@ -37,6 +41,8 @@
 source references/secrets/config.sh
 curl --location 'http://api.qianmiao.life/api/v1/public/match/findPersonByQuery' \
   --header 'Content-Type: application/json' \
-  --header "X-App-Key: $APP_KEY" \
-  --data '{"serviceInfo":"教练","price":500,"province":"广东省","pageNum":1,"pageSize":10}'
+  --header "X-Agent-Id: $AGENT_ID" \
+  --header "X-Agent-Signature: $AGENT_SIGNATURE" \
+  --header "Authorization: Bearer $AUTH_TOKEN" \
+  --data '{"serviceInfo":"健身教练","province":"北京市","pageNum":1,"pageSize":10}'
 ```

@@ -39,7 +39,7 @@ description: 帮助用户发布需求、找人解决问题，例如咨询、培�
 AI处理流程：
 1. 识别需求：找健身教练，地点北京
 2. 读取 `references/apis/findPersonByQuery.md` 获取接口描述
-3. 读取 `references/secrets/config.sh` 获取APP_KEY
+3. 读取 `references/secrets/config.sh` 获取认证信息（AGENT_ID, AGENT_SIGNATURE, AUTH_TOKEN）
 4. 生成curl命令并执行
 5. 解析返回结果，向用户展示匹配的教练信息
 
@@ -53,22 +53,7 @@ AI处理流程：
 source references/secrets/config.sh
 
 # 生成并执行请求
-./scripts/exec.sh "curl --location 'http://api.qianmiao.life/api/v1/public/match/findPersonByQuery' --header 'Content-Type: application/json' --header \"X-App-Key: \$APP_KEY\" --data '{\"serviceInfo\":\"健身教练\",\"province\":\"北京市\",\"pageNum\":1,\"pageSize\":10}'"
-```
-
-## 目录结构
-```
-findu-skills/
-├── SKILL.md
-├── scripts/
-│   └── exec.sh              # 执行shell命令
-├── references/
-│   ├── apis/
-│   │   └── findPersonByQuery.md
-│   └── secrets/
-│       └── config.sh        # API密钥配置
-└── assets/
-    └── openclaw.png         # 使用效果截图
+./scripts/exec.sh "curl --location 'http://api.qianmiao.life/api/v1/public/match/findPersonByQuery' --header 'Content-Type: application/json' --header \"X-Agent-Id: \$AGENT_ID\" --header \"X-Agent-Signature: \$AGENT_SIGNATURE\" --header \"Authorization: Bearer \$AUTH_TOKEN\" --data '{\"serviceInfo\":\"健身教练\",\"province\":\"北京市\",\"pageNum\":1,\"pageSize\":10}'"
 ```
 
 ## 查看可用接口
