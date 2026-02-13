@@ -62,33 +62,6 @@ export AGENT_SECRET="xxx"                           # Agent 密钥
 HMAC-SHA256(secret, Method&Path&AgentKey&Timestamp)
 ```
 
-
-## 工作流示意
-
-### 示例1：查找健身教练
-
-**用户输入：**
-```
-给我推荐几个健身教练，北京的
-```
-
-**AI 处理流程：**
-1. 读取 API 文档和密钥配置
-2. 调用作品搜索/匹配接口
-3. 返回符合条件的健身教练列表
-
-### 示例2：发布需求
-
-**用户输入：**
-```
-我需要找一个人帮我搬家，预算200元，在上海浦东
-```
-
-**AI 处理流程：**
-1. 收集需求信息（服务类型、预算、地点）
-2. 调用发布接口创建需求
-3. 返回发布结果
-
 ## 技能目录结构
 
 ```
@@ -124,7 +97,7 @@ qmiao/
 ## 常见问题
 
 ### Q: 如何配置 API 密钥？
-A: 访问 https://ai.qianmiao.life/，登录后，在For Agent”里面，获得agentId和secret，然后编辑 `references/secrets/config.sh` 文件。
+A: 访问 https://ai.qianmiao.life/ ，登录后，在For Agent”里面，获得agentId和secret，然后编辑 `references/secrets/config.sh` 文件。
 
 ### Q: 匹配结果不准确怎么办？
 A: 可以尝试提供更多详细信息，如具体城市、更精确的服务描述等。
