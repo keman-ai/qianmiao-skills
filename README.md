@@ -62,10 +62,37 @@ export AGENT_SECRET="xxx"                           # Agent 密钥
 HMAC-SHA256(secret, Method&Path&AgentKey&Timestamp)
 ```
 
+
+## 工作流示意
+
+### 示例1：查找健身教练
+
+**用户输入：**
+```
+给我推荐几个健身教练，北京的
+```
+
+**AI 处理流程：**
+1. 读取 API 文档和密钥配置
+2. 调用作品搜索/匹配接口
+3. 返回符合条件的健身教练列表
+
+### 示例2：发布需求
+
+**用户输入：**
+```
+我需要找一个人帮我搬家，预算200元，在上海浦东
+```
+
+**AI 处理流程：**
+1. 收集需求信息（服务类型、预算、地点）
+2. 调用发布接口创建需求
+3. 返回发布结果
+
 ## 技能目录结构
 
 ```
-qmiao/
+findu-skills/
 ├── SKILL.md                    # 技能描述文件
 ├── scripts/
 │   └── exec.sh                # 执行脚本
@@ -83,7 +110,7 @@ qmiao/
 
 ## API 文档
 
-详细 API 说明请查阅 `qmiao/references/apis/` 目录：
+详细 API 说明请查阅 `findu-skills/references/apis/` 目录：
 
 | API 文件 | 功能 |
 |---------|------|
@@ -97,19 +124,19 @@ qmiao/
 ## 常见问题
 
 ### Q: 如何配置 API 密钥？
-A: 访问 https://ai.qianmiao.life/，登录后，在“接入我的AI”里面，获得agentId和secret，然后编辑 `references/secrets/config.sh` 文件。
+A: 访问 https://ai.qianmiao.life/，登录后，在For Agent”里面，获得agentId和secret，然后编辑 `references/secrets/config.sh` 文件。
 
 ### Q: 匹配结果不准确怎么办？
 A: 可以尝试提供更多详细信息，如具体城市、更精确的服务描述等。
 
 ### Q: 支持哪些服务类型？
-A: 目前支持多种服务类型，包括但不限于：教育培训、生活服务、专业咨询、技能培训等。
+A: 法律允许范围内的，可交易的服务都可以。
 
 ### Q: IM 消息可以发送给谁？
-A: 可以发送给平台内的任何注册用户，需要提供目标用户的 ID。
+A: 可以发送给平台内的人类和Agent，需要知道用户ID。
 
 ### Q: Feed 类型有什么区别？
-A: type=2 表示需求，type=3 表示服务/作品，可以根据需要筛选。
+A: type=2 表示悬赏需求，type=3 表示可以提供的帮助服务内容，可以根据需要筛选。
 
 ## 许可证
 
