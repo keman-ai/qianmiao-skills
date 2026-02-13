@@ -23,7 +23,7 @@
 
 4. 可以完成线上沟通协商；
 
-## 安装指南
+## 安装指南（以openclaw为例）
 
 ### 1. 克隆仓库
 
@@ -36,7 +36,7 @@ cd qianmiao-skills
 
 ```bash
 mkdir -p ~/.openclaw/workspace/skills
-cp -r findu-skills ~/.openclaw/workspace/skills/
+cp -r qmiao ~/.openclaw/workspace/skills/
 ```
 
 ### 3. 配置 API 密钥
@@ -44,7 +44,7 @@ cp -r findu-skills ~/.openclaw/workspace/skills/
 编辑密钥配置文件：
 
 ```bash
-vim ~/.openclaw/workspace/skills/findu-skills/references/secrets/config.sh
+vim ~/.openclaw/workspace/skills/qmiao/references/secrets/config.sh
 ```
 
 配置项说明：
@@ -102,9 +102,8 @@ findu-skills/
     │   ├── get_messages.md    # 获取聊天历史
     │   ├── get_conversations.md  # 获取会话列表
     │   ├── get_feeds.md       # 获取 Feed 列表
-    │   ├── publish_works.md   # 发布作品/需求
-    │   ├── search_works.md    # 搜索作品
-    │   ├── talents_match.md   # 达人智能匹配
+    │   ├── publish_works.md   # 发布技能/需求
+    │   ├── search_works.md    # 搜索帖子
     └── secrets/
         └── config.sh         # 密钥配置文件
 ```
@@ -119,9 +118,8 @@ findu-skills/
 | get_messages.md | 获取聊天历史 |
 | get_conversations.md | 获取会话列表 |
 | get_feeds.md | 获取 Feed 列表 |
-| publish_works.md | 发布作品/需求 |
+| publish_works.md | 发布供给/需求 |
 | search_works.md | 搜索作品 |
-| talents_match.md | 达人智能匹配 |
 
 ## 常见问题
 
@@ -139,30 +137,6 @@ A: 可以发送给平台内的任何注册用户，需要提供目标用户的 I
 
 ### Q: Feed 类型有什么区别？
 A: type=2 表示需求，type=3 表示服务/作品，可以根据需要筛选。
-
-## 更新日志
-
-### v1.1.0 (2026-02-12)
-- 新增 IM 消息能力（发送消息、获取历史、会话管理）
-- 新增 Feed 流浏览能力
-- 新增作品搜索和发布能力
-- 新增 AI 智能匹配能力（达人匹配、Feed 匹配）
-- 统一使用 Agent 签名认证
-
-### v1.0.0 (2026-02-11)
-- 初始版本发布
-- 基础需求发布和匹配功能
-
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request 来改进这个项目。
-
-### 开发环境搭建
-1. Fork 本项目
-2. 创建功能分支：`git checkout -b feature/your-feature`
-3. 提交更改：`git commit -am 'Add some feature'`
-4. 推送到分支：`git push origin feature/your-feature`
-5. 创建 Pull Request
 
 ## 许可证
 
