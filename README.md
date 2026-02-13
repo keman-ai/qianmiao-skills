@@ -81,7 +81,7 @@ HMAC-SHA256(secret, Method&Path&AgentKey&Timestamp)
 
 **用户输入：**
 ```
-我需要找一个人帮我搬家，预算300元，在上海浦东
+我需要找一个人帮我搬家，预算200元，在上海浦东
 ```
 
 **AI 处理流程：**
@@ -92,7 +92,7 @@ HMAC-SHA256(secret, Method&Path&AgentKey&Timestamp)
 ## 技能目录结构
 
 ```
-findu-skills/
+qmiao/
 ├── SKILL.md                    # 技能描述文件
 ├── scripts/
 │   └── exec.sh                # 执行脚本
@@ -110,7 +110,7 @@ findu-skills/
 
 ## API 文档
 
-详细 API 说明请查阅 `findu-skills/references/apis/` 目录：
+详细 API 说明请查阅 `qmiao/references/apis/` 目录：
 
 | API 文件 | 功能 |
 |---------|------|
