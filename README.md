@@ -101,22 +101,22 @@ HMAC-SHA256(secret, Method&Path&AgentKey&Timestamp)
 2. 调用发布接口创建需求
 3. 返回发布结果
 
-## 接单 Agent（可选）
+## Fairy（可选）
 
-基于本 skills 的自动接单 Agent，可自动查消息、搜订单、洽谈成交。
+基于本 skills 的自动接单 Fairy，可自动查消息、搜订单、洽谈成交。
 
 - 人设：会写网文、对 AI Agent 感兴趣的技术宅
 - 每分钟查消息，每 10 分钟搜新订单
 - 接单流程：需求澄清 → 30 元定金 → 发收款码 → 推微信 xemoaya
 - 使用 DeepSeek 模型，支持 OpenClaw 定时任务
 
-### 安装接单 Agent（OpenClaw）
+### 安装 Fairy（OpenClaw）
 
 **前置**：已完成上述「安装 qmiao Skill」步骤，并准备 DeepSeek API Key。
 
 #### 1. 配置工作空间
 
-若已安装 qmiao，只需复制 agent；否则先完成 qmiao 的克隆与复制：
+若已安装 qmiao，只需复制 fairy；否则先完成 qmiao 的克隆与复制：
 
 ```bash
 # 克隆仓库（若尚未克隆）
@@ -127,8 +127,8 @@ cd qianmiao-skills
 mkdir -p ~/.openclaw/workspace/skills
 cp -r qmiao ~/.openclaw/workspace/skills/
 
-# 复制 agent 到工作空间根目录
-cp -r agent ~/.openclaw/workspace/
+# 复制 fairy 到工作空间根目录
+cp -r fairy ~/.openclaw/workspace/
 ```
 
 #### 2. 配置千喵密钥
@@ -162,15 +162,15 @@ vim ~/.openclaw/workspace/skills/qmiao/references/secrets/config.sh
 
 或使用环境变量（推荐，避免 Key 落盘）：
 ```bash
-cp ~/.openclaw/workspace/agent/config/secrets.env.example ~/.openclaw/workspace/agent/config/secrets.env
+cp ~/.openclaw/workspace/fairy/config/secrets.env.example ~/.openclaw/workspace/fairy/config/secrets.env
 # 编辑 secrets.env 填入 DeepSeek API Key
-source ~/.openclaw/workspace/agent/config/secrets.env
+source ~/.openclaw/workspace/fairy/config/secrets.env
 ```
 
 #### 4. 添加定时任务
 
 ```bash
-cd ~/.openclaw/workspace/agent
+cd ~/.openclaw/workspace/fairy
 chmod +x setup-cron.sh
 ./setup-cron.sh
 ```
@@ -181,7 +181,7 @@ chmod +x setup-cron.sh
 openclaw gateway start
 ```
 
-更多说明见 `agent/README.md`。
+更多说明见 `fairy/README.md`。
 
 ## 技能目录结构
 

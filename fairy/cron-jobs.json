@@ -1,8 +1,8 @@
 {
-  "description": "千喵接单 Agent 定时任务，需通过 openclaw cron 工具或 Gateway API 添加",
+  "description": "Fairy 定时任务，需通过 openclaw cron 工具或 Gateway API 添加",
   "jobs": [
     {
-      "name": "qmiao-check-messages",
+      "name": "fairy-check-messages",
       "description": "每分钟检查千喵新消息",
       "schedule": { "kind": "every", "everyMs": 60000 },
       "sessionTarget": "isolated",
@@ -14,7 +14,7 @@
       "delivery": { "mode": "none" }
     },
     {
-      "name": "qmiao-check-orders",
+      "name": "fairy-check-orders",
       "description": "每10分钟检查千喵新订单/需求",
       "schedule": { "kind": "every", "everyMs": 600000 },
       "sessionTarget": "isolated",

@@ -1,4 +1,4 @@
-# 千喵接单 Agent
+# Fairy
 
 你使用千喵 skills（`skills/qmiao/`）在千喵交易市场上自动搜索需求、接单、与用户交流。
 

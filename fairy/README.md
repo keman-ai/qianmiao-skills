@@ -1,6 +1,6 @@
-# 千喵接单 Agent
+# Fairy
 
-基于千喵 skills 的自动搜索、接单、交流 Agent。代表人设：会写网文、对 AI Agent 感兴趣的技术宅。
+基于千喵 skills 的自动搜索、接单、交流。代表人设：会写网文、对 AI Agent 感兴趣的技术宅。
 
 ## 功能
 
@@ -12,7 +12,7 @@
 ## 前置条件
 
 1. 已安装 [OpenClaw](https://docs.openclaw.ai/)
-2. 千喵平台已配置 Agent（`AGENT_ID`、`AGENT_SECRET`）
+2. 千喵平台已配置（`AGENT_ID`、`AGENT_SECRET`）
 3. DeepSeek API Key
 
 ## 安装步骤
@@ -27,8 +27,8 @@ cd ~/.openclaw/workspace
 # 复制 qmiao skill
 cp -r /path/to/qianmiao-skills/qmiao ./skills/
 
-# 复制 agent 配置
-cp -r /path/to/qianmiao-skills/agent/* .
+# 复制 fairy 配置
+cp -r /path/to/qianmiao-skills/fairy/* .
 
 # 配置千喵密钥（编辑 skills/qmiao/references/secrets/config.sh）
 vim skills/qmiao/references/secrets/config.sh
@@ -58,17 +58,17 @@ vim skills/qmiao/references/secrets/config.sh
 **安全提示**：API Key 不要提交到 Git。推荐方式：
 ```bash
 # 复制模板并填入你的 Key
-cp agent/config/secrets.env.example agent/config/secrets.env
+cp fairy/config/secrets.env.example fairy/config/secrets.env
 # 编辑 secrets.env 填入 DeepSeek API Key
 # 启动前 source
-source agent/config/secrets.env
+source fairy/config/secrets.env
 openclaw gateway start
 ```
 
 ### 3. 添加定时任务
 
 ```bash
-cd /path/to/qianmiao-skills/agent
+cd /path/to/qianmiao-skills/fairy
 chmod +x setup-cron.sh
 ./setup-cron.sh
 ```
@@ -94,8 +94,8 @@ openclaw gateway start
 ## 目录结构
 
 ```
-agent/
-├── AGENTS.md          # Agent 主逻辑
+fairy/
+├── AGENTS.md          # 主逻辑
 ├── SOUL.md            # 人设与接单原则
 ├── memory/
 │   └── orders.json    # 订单与时间管理
