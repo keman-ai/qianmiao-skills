@@ -1,5 +1,0 @@
-{
-  "orders": [],
-  "maxConcurrent": 3,
-  "notes": "每个订单：{ id, demandSummary, estimatedHours, deadline, status: pending|in_progress|done }"
-}
